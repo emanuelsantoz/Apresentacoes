@@ -1,0 +1,62 @@
+[
+  {
+    "n": 1,
+    "title": "Conferência contábil mais clara, rastreável e fácil de acompanhar",
+    "notes": "Boa tarde. Hoje eu quero mostrar um protótipo simples, com um objetivo bem claro: tornar a conferência contábil do mês mais fácil de acompanhar.\n\nA ideia não é substituir o contador. É dar à empresa uma forma de entender os valores que recebe — de onde cada número vem, qual regra foi usada e se existe alguma diferença.\n\nÀ direita está o fluxo inteiro, em cinco etapas: envio, leitura, confirmação, cálculo e relatório. Vou voltar a ele mais adiante, com o protótipo. E no fim quero sair daqui com uma decisão sobre um piloto pequeno."
+  },
+  {
+    "n": 2,
+    "title": "Quem eu sou",
+    "notes": "Rapidamente, quem eu sou. Meu nome é Emanuel Santos e eu trabalho na interseção entre estratégia, design e engenharia de produtos digitais.\n\nNa prática, isso significa três coisas: eu construo e testo sistemas; antes de automatizar, eu organizo o processo — porque uma tela bonita em cima de uma rotina confusa só deixa a confusão mais rápida; e eu gosto de pegar problemas pouco estruturados e transformar em passos claros.\n\nEste trabalho nasce dentro do meu curso de Análise e Desenvolvimento de Sistemas, como projeto de extensão. É isso que eu explico no próximo slide."
+  },
+  {
+    "n": 3,
+    "title": "PEX — Projeto de Extensão",
+    "notes": "PEX é o Projeto de Extensão do curso. A proposta é simples: sair da sala de aula, identificar um problema real numa pequena empresa e propor uma solução de sistemas viável.\n\nO roteiro tem três momentos. Primeiro, o diagnóstico: entender a rotina e onde estão as dúvidas. Depois, a coleta: conversa, questionário e documentos. E, por fim, a proposta: um protótipo e um plano de ação.\n\nNós estamos nessa terceira etapa. Tudo o que vou mostrar a seguir é a proposta — e ela só faz sentido se fizer sentido para a empresa."
+  },
+  {
+    "n": 4,
+    "title": "O problema atual",
+    "notes": "Esse é o problema que encontrei. A empresa recebe guias, cálculos e documentos todo mês. O valor chega pronto — mas a explicação, não.\n\nOs documentos ficam espalhados: um PDF no e-mail, uma foto no celular, uma planilha em outro lugar. Os cálculos são difíceis de acompanhar sem a memória de cálculo. E quando aparece uma divergência, normalmente é perto do vencimento, quando já não há tempo para entender com calma.\n\nO resultado é que cada dúvida vira uma nova rodada de perguntas ao contador. Não por falta de cuidado de ninguém — mas porque não existe um lugar onde a empresa consiga enxergar a origem de cada número."
+  },
+  {
+    "n": 5,
+    "title": "Objetivo do MVP",
+    "notes": "O objetivo do MVP é deliberadamente pequeno: conferir uma competência por vez — um mês de cada vez.\n\nPara cada item conferido, a pessoa vê três coisas lado a lado: o valor informado, o valor esperado pelo cálculo e a diferença. E a diferença aparece sempre, mesmo quando é pequena. Não existe tolerância automática: quem decide se uma diferença importa é uma pessoa, não o sistema.\n\nAlém disso, cada valor vem com a regra usada, o documento e a página de origem, e o que ficou pendente.\n\nO cenário de referência é real: um escritório de serviços jurídicos em São Paulo, no Simples Nacional, Anexo IV, com uma sócia em pró-labore e uma estagiária universitária de seis horas por dia."
+  },
+  {
+    "n": 6,
+    "title": "A solução proposta",
+    "notes": "A solução parte de uma regra: a empresa envia o que já tem. PDF, planilha, uma foto tirada no celular ou os dados digitados. Ninguém precisa reorganizar a rotina antes de começar.\n\n(clique) O assistente lê esses documentos, identifica o que está faltando e pergunta — em vez de supor. Depois, recalcula os valores do mês com base nas regras da competência.\n\n(clique) A saída é um relatório claro: uma explicação em linguagem simples, a memória de cálculo e a lista completa das divergências.\n\nDois cuidados importantes. Se a leitura falhar — uma foto borrada, um PDF ilegível —, o sistema pede outra foto, outro arquivo ou a digitação, e marca a conferência como pendente. E a validação final continua sendo de um profissional contábil habilitado."
+  },
+  {
+    "n": 7,
+    "title": "Fluxo do protótipo",
+    "notes": "Agora, o protótipo. Ele serve como evidência concreta do fluxo — não como produto pronto. Os números são do caso simulado que está no próprio questionário: faturamento de 30 mil no mês, RBT12 de 360 mil, pró-labore de 7 mil.\n\n(clique) Envio: a empresa manda o que tem — uma guia em PDF, a folha em planilha, uma foto de recibo. No celular, isso acontece numa conversa.\n\n(clique) Leitura: o sistema mostra o que encontrou e de onde veio cada dado. E já aponta o que faltou: aqui, o comprovante de pagamento do DAS.\n\n(clique) Confirmação: em vez de supor, ele pergunta. Se ninguém souber, o item fica pendente e o resto da conferência continua.\n\n(clique) Cálculo: a memória de cálculo fica visível, linha por linha — faixa, tabela, alíquota efetiva e valor esperado. Nesse caso simulado, o DAS esperado é 2.025 reais, igual ao da guia.\n\n(clique) Relatório: o que foi conferido, o que está pendente e a diferença de cada item — mesmo quando é zero. E o relatório termina sempre no mesmo lugar: na validação do profissional contábil.\n\n(Observação para o apresentador: tabela do Anexo IV e CPP de 20% sobre o pró-labore são premissas do caso simulado; confirmar com o contador antes de usar dados reais.)"
+  },
+  {
+    "n": 8,
+    "title": "O que precisamos para começar",
+    "notes": "Para começar, precisamos de quatro definições — e nenhuma delas depende de integração com outros sistemas.\n\nPrimeiro, os documentos: guias, folha, notas e extratos de uma única competência. Segundo, os acessos: quem envia, quem consulta e quem valida o relatório.\n\nTerceiro, e mais importante: a responsabilidade sobre os dados. Estamos falando de dados fiscais da empresa e de dados pessoais da sócia e da estagiária. Por isso, finalidade, tempo de guarda e descarte precisam estar combinados por escrito antes do primeiro envio, de acordo com a LGPD.\n\nE quarto, a infraestrutura do piloto: onde o protótipo roda e quem cuida desse ambiente durante o teste."
+  },
+  {
+    "n": 9,
+    "title": "Perguntas rápidas e questionário completo",
+    "notes": "O questionário completo é extenso — e eu não quero que ele vire uma barreira. Por isso, divido em dois momentos.\n\nAlgumas perguntas cabem aqui, agora, na conversa: qual mês vamos conferir primeiro, quais documentos já existem, qual valor gera mais dúvida e quem valida o relatório final.\n\n(clique) As demais precisam ficar registradas: identificação e CNAE, faturamento e RBT12, a guia DAS, o pró-labore, o estágio, as outras despesas e os critérios de validação.\n\nNão é burocracia. Cada resposta registrada é o que permite ao sistema explicar por que um valor está certo ou errado, e é o que permite ao contador conferir o raciocínio depois. Sem isso, o cálculo vira uma caixa-preta — exatamente o que queremos evitar."
+  },
+  {
+    "n": 10,
+    "title": "Escopo do primeiro MVP",
+    "notes": "O primeiro MVP é pequeno de propósito: uma empresa, uma competência e três conferências.\n\nDentro do escopo: o DAS conferido contra a receita e o RBT12; o pró-labore, com INSS, IRRF e a contribuição patronal; e o estágio, com bolsa e auxílio-transporte. Tudo isso entregue num relatório que mostra todas as divergências.\n\nE é tão importante dizer o que fica de fora: nada de integração com outros sistemas, nada de enviar declarações ou fazer pagamentos, nenhuma decisão sem a validação contábil. Balanço e gestão financeira também ficam para depois.\n\nUm escopo assim permite saber rápido se a ideia funciona — e, se não funcionar, o custo de descobrir isso é baixo."
+  },
+  {
+    "n": 11,
+    "title": "Vamos fechar um MVP?",
+    "notes": "Então, a proposta: vamos fechar um piloto? Ele é pequeno e tem começo, meio e fim.\n\nPrimeiro, escolhemos uma competência e reunimos os documentos. Depois, eu rodo a conferência no protótipo. Em seguida, revisamos o relatório junto com o profissional contábil. E, no fim, decidimos juntos: ajustar, ampliar ou encerrar.\n\n(clique) Para saber se deu certo, proponho quatro critérios: todo valor com origem e fórmula visíveis; toda divergência aparecendo no relatório; o contador conseguindo validar sem refazer o cálculo; e a empresa entendendo o resultado sem precisar de ajuda técnica.\n\nO que eu preciso sair daqui sabendo é simples: qual competência, quais documentos e a data da revisão."
+  },
+  {
+    "n": 12,
+    "title": "Continuidade",
+    "notes": "Para fechar: este MVP é sobre conferência. Ele não é um sistema de gestão — pelo menos não agora.\n\nSe o piloto provar valor, existem caminhos naturais: um balanço consolidado a partir das conferências, o acompanhamento financeiro de entradas, saídas e prazos e, mais adiante, indicadores para a gestão da empresa.\n\nMas cada etapa só começa se a anterior funcionar. A primeira decisão é a de hoje: o piloto.\n\nObrigado. Fico à disposição para as perguntas — e para combinarmos a competência e a data da revisão."
+  }
+]

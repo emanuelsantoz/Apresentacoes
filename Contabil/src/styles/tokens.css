@@ -1,0 +1,73 @@
+/* Espelho CSS de src/theme/tokens.ts — Emanuel Santos Brand System v0.1 */
+:root {
+  --c-night: #07111f;
+  --c-deep: #164a8a;
+  --c-core: #2166c9;
+  --c-pulse: #2f7de1;
+  --c-shirt: #b9d8f2;
+  --c-mist: #f7fafc;
+  --c-white: #ffffff;
+
+  --n-800: #1b2737;
+  --n-600: #526174;
+  --n-400: #91a0b2;
+  --n-200: #dce4ec;
+  --n-100: #edf2f7;
+
+  /* Tema de produto (provisório = paleta Emanuel) */
+  --product-primary: var(--c-core);
+  --product-primary-strong: var(--c-deep);
+  --product-primary-soft: var(--c-shirt);
+  --product-on-primary: var(--c-white);
+  --product-accent: var(--c-pulse);
+  --product-on-accent: var(--c-night);
+
+  /* Semânticos de conferência (sempre acompanhados de ícone + texto) */
+  --status-ok: var(--c-core);
+  --status-ok-soft: #e3eefb;
+  --status-warn: #a35a00;
+  --status-warn-soft: #fdf1e2;
+
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-control: 12px;
+  --radius-card: 20px;
+  --radius-editorial: 28px;
+  --radius-pill: 999px;
+  --grid-unit: 48px;
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-standard: 240ms;
+  --dur-assemble: 480ms;
+
+  --shadow-soft: 0 1px 2px rgb(7 17 31 / 0.05), 0 24px 56px -32px rgb(7 17 31 / 0.28);
+}
+
+/* Superfície clara (padrão) */
+.theme-light {
+  --bg: var(--c-mist);
+  --ink: var(--c-night);
+  --ink-soft: var(--n-600);
+  --surface: var(--c-white);
+  --surface-sunken: var(--n-100);
+  --border: var(--n-200);
+  --grid-line: rgb(220 228 236 / 0.55);
+  --highlight: var(--c-core);
+  --frame: var(--c-core);
+}
+
+/* Superfície escura (capa, decisão) */
+.theme-dark {
+  --bg: var(--c-night);
+  --ink: var(--c-mist);
+  --ink-soft: #aab8c8;
+  --surface: #0d1a2a;
+  --surface-sunken: #050c16;
+  --border: #243448;
+  --grid-line: rgb(36 52 72 / 0.55);
+  --highlight: var(--c-pulse);
+  --frame: var(--c-pulse);
+}
