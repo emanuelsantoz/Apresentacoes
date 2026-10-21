@@ -1,9 +1,10 @@
 /**
- * Gera docs/ROTEIRO.md a partir de src/content (texto de tela, fala e layout).
- * Rode sempre que editar o conteúdo: npm run roteiro
+ * Gera docs/ROTEIRO.md (pt) e docs/ROTEIRO-EN.md (en) a partir de src/content
+ * (texto de tela, fala e layout). Rode sempre que editar o conteúdo: npm run roteiro
  */
 import { writeFileSync } from "node:fs";
 import { slides } from "../src/content";
+import type { Locale } from "../src/i18n/locale";
 
 const SKIP = new Set(["icon", "x", "y", "rotate", "ok", "tone", "now", "current"]);
 const clean = (s: string) => s.replace(/[[\]]/g, "").replace(/\n/g, " ");
@@ -27,23 +28,41 @@ function collect(value: unknown, depth = 0, out: string[] = [], asItem = false):
   return out;
 }
 
-const lines: string[] = [
-  "# Roteiro — MVP de Conferência Contábil",
-  "",
-  "> Gerado automaticamente por `npm run roteiro` a partir de `src/content/`. Não edite à mão.",
-  "",
-  `${slides.length} slides · 16:9 · Criado por Emanuel Santos`,
-  "",
-];
+const T: Record<Locale, Record<string, string>> = {
+  pt: {
+    file: "docs/ROTEIRO.md",
+    h1: "Roteiro — MVP de Conferência Contábil",
+    auto: "Gerado automaticamente por `npm run roteiro` a partir de `src/content/`. Não edite à mão.",
+    meta: "slides · 16:9 · Criado por Emanuel Santos",
+    layout: "Layout",
+    clicks: "Cliques internos",
+    screen: "Texto de tela",
+    notes: "Fala do apresentador",
+  },
+  en: {
+    file: "docs/ROTEIRO-EN.md",
+    h1: "Script — Accounting Review MVP",
+    auto: "Generated automatically by `npm run roteiro` from `src/content/`. Do not edit by hand.",
+    meta: "slides · 16:9 · Created by Emanuel Santos",
+    layout: "Layout",
+    clicks: "Internal clicks",
+    screen: "On-screen text",
+    notes: "Speaker notes",
+  },
+};
 
-slides.forEach((s, i) => {
-  const n = String(i + 1).padStart(2, "0");
-  lines.push(`## ${n} · ${s.title}`, "");
-  lines.push(`**Layout:** ${s.layoutNote}`, "");
-  if (s.steps) lines.push(`**Cliques internos:** ${s.steps}`, "");
-  lines.push("**Texto de tela**", "", ...collect(s.data), "");
-  lines.push("**Fala do apresentador**", "", ...s.notes.split("\n\n").map((p) => `> ${p}\n>`), "");
-});
-
-writeFileSync("docs/ROTEIRO.md", lines.join("\n"));
-console.log(`✓ docs/ROTEIRO.md (${slides.length} slides)`);
+for (const locale of ["pt", "en"] as Locale[]) {
+  const t = T[locale];
+  const lines: string[] = [`# ${t.h1}`, "", `> ${t.auto}`, "", `${slides.length} ${t.meta}`, ""];
+  slides.forEach((s, i) => {
+    const c = s.content[locale];
+    const n = String(i + 1).padStart(2, "0");
+    lines.push(`## ${n} · ${c.title}`, "");
+    lines.push(`**${t.layout}:** ${c.layoutNote}`, "");
+    if (s.steps) lines.push(`**${t.clicks}:** ${s.steps}`, "");
+    lines.push(`**${t.screen}**`, "", ...collect(c.data), "");
+    lines.push(`**${t.notes}**`, "", ...c.notes.split("\n\n").map((p) => `> ${p}\n>`), "");
+  });
+  writeFileSync(t.file, lines.join("\n"));
+  console.log(`✓ ${t.file} (${slides.length} slides)`);
+}

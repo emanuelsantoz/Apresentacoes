@@ -1,3 +1,4 @@
+import { useLocale, useUi } from "../../i18n/locale";
 import type { SlideDef } from "../../types/slide";
 
 interface NotesPanelProps {
@@ -9,6 +10,9 @@ interface NotesPanelProps {
 
 /** Painel da fala do apresentador (tecla N). Não entra no PDF. */
 export function NotesPanel({ slide, index, total, step }: NotesPanelProps) {
+  const { locale } = useLocale();
+  const t = useUi();
+  const notes = slide.content[locale].notes;
   return (
     <aside
       style={{
@@ -30,9 +34,9 @@ export function NotesPanel({ slide, index, total, step }: NotesPanelProps) {
       }}
     >
       <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.12em", color: "#2f7de1", marginBottom: 8 }}>
-        FALA · {String(index + 1).padStart(2, "0")}/{total} · PASSO {step}/{slide.steps}
+        {t.notes.toUpperCase()} · {String(index + 1).padStart(2, "0")}/{total} · {t.step.toUpperCase()} {step}/{slide.steps}
       </div>
-      {slide.notes.split("\n\n").map((p, i) => (
+      {notes.split("\n\n").map((p, i) => (
         <p key={i} style={{ margin: "0 0 10px" }}>
           {p}
         </p>

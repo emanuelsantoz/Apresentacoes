@@ -7,10 +7,11 @@ npm run export:pdf
 
 Gera:
 
-- `exports/mvp-conferencia-contabil.pdf` — 12 páginas 1920×1080, estado final de cada slide;
-- `exports/slides/slide-NN.png` — uma imagem por slide.
+- `exports/mvp-conferencia-contabil.pdf` (PT) e `exports/mvp-conferencia-contabil-en.pdf` (EN) — 12 páginas 1920×1080, estado final de cada slide;
+- `exports/slides/` (PT) e `exports/slides-en/` (EN) — uma imagem por slide;
+- `exports/notes.json` e `exports/notes-en.json` — falas, usadas pelo PPTX.
 
-Como funciona: `scripts/export-pdf.ts` sobe o `vite preview`, abre `?print=1` no Chromium (Playwright), espera as fontes e imprime com `printBackground` e `@page { size: 1920px 1080px; margin: 0 }`.
+Como funciona: `scripts/export-pdf.ts` sobe o `vite preview`, abre `?print=1&lang=pt` e `?print=1&lang=en` no Chromium (Playwright), espera as fontes e imprime com `printBackground` e `@page { size: 1920px 1080px; margin: 0 }`.
 
 Na primeira vez, instale o navegador do Playwright:
 
@@ -27,7 +28,7 @@ pip install python-pptx
 python scripts/export-pptx.py
 ```
 
-Cria `exports/mvp-conferencia-contabil.pptx`: cada slide é a imagem em tela cheia, e a fala do apresentador vai para as anotações. No Google Slides: *Arquivo → Importar slides*. Os textos ficam como imagem; para editar, use o projeto.
+Cria `exports/mvp-conferencia-contabil.pptx` e `exports/mvp-conferencia-contabil-en.pptx`: cada slide é a imagem em tela cheia, e a fala do apresentador vai para as anotações. No Google Slides: *Arquivo → Importar slides*. Os textos ficam como imagem; para editar, use o projeto.
 
 ## Verificar overflow
 

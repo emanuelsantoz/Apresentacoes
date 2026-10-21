@@ -3,6 +3,22 @@ import { Icon, type IconKey } from "../ui/Icon";
 
 /* Dados das telas do protótipo (preenchidos em src/content/slide-07.ts). */
 export interface PrototypeScreensData {
+  /** Rótulos fixos das telas (traduzíveis). */
+  labels: {
+    competence: string;
+    uploadTitle: string;
+    dropTitle: string;
+    dropHint: string;
+    received: string;
+    readTitle: string;
+    read: string;
+    missing: string;
+    confirmTitle: string;
+    reportTitle: string;
+    headers: [string, string, string, string, string];
+    phoneHeader: string;
+    inputPlaceholder: string;
+  };
   competence: string;
   files: { name: string; kind: string; icon: IconKey }[];
   readings: { label: string; value: string; source: string; ok: boolean }[];
@@ -52,18 +68,20 @@ const cell = { padding: "13px 14px", borderBottom: "1px solid var(--n-200)", fon
 
 /* ---------- WEBSITE ---------- */
 
-export function WebScreen({ step, d }: { step: number; d: PrototypeScreensData }) {
+export function WebScreen({ step, d, flow }: { step: number; d: PrototypeScreensData; flow: string[] }) {
+  const L = d.labels;
+  const kicker = (i: number) => `${String(i + 1).padStart(2, "0")} · ${flow[i]}`;
   return (
     <div style={{ display: "grid", gridTemplateColumns: "250px 1fr", height: "100%", color: "var(--c-night)" }}>
       <aside style={{ background: "var(--c-night)", color: "var(--c-mist)", padding: "26px 22px" }}>
         <p className="t-mono" style={{ fontSize: 14, color: "#aab8c8" }}>
-          Competência
+          {L.competence}
         </p>
         <p className="t-num" style={{ fontSize: 22, marginTop: 6 }}>
           {d.competence}
         </p>
         <ul style={{ marginTop: 30, display: "grid", gap: 6 }}>
-          {["Envio", "Leitura", "Confirmação", "Cálculo", "Relatório"].map((s, i) => (
+          {flow.map((s, i) => (
             <li
               key={s}
               style={{
@@ -88,7 +106,7 @@ export function WebScreen({ step, d }: { step: number; d: PrototypeScreensData }
       <main style={{ padding: "28px 36px", overflow: "hidden" }}>
         {step === 0 && (
           <>
-            <ScreenTitle kicker="01 · Envio" title="Envie os documentos do mês" />
+            <ScreenTitle kicker={kicker(0)} title={L.uploadTitle} />
             <div
               style={{
                 border: "2px dashed var(--n-200)",
@@ -104,8 +122,8 @@ export function WebScreen({ step, d }: { step: number; d: PrototypeScreensData }
                 <Icon name="upload" size={36} />
               </span>
               <div>
-                <p style={{ fontSize: 21, fontWeight: 600 }}>Arraste PDF, planilha ou foto</p>
-                <p style={{ fontSize: 18, color: "var(--n-600)", marginTop: 4 }}>ou digite os dados manualmente</p>
+                <p style={{ fontSize: 21, fontWeight: 600 }}>{L.dropTitle}</p>
+                <p style={{ fontSize: 18, color: "var(--n-600)", marginTop: 4 }}>{L.dropHint}</p>
               </div>
             </div>
             <ul style={{ marginTop: 18, display: "grid", gap: 10 }}>
@@ -131,7 +149,7 @@ export function WebScreen({ step, d }: { step: number; d: PrototypeScreensData }
                   <span className="t-mono" style={{ fontSize: 14, color: "var(--n-600)" }}>
                     {f.kind}
                   </span>
-                  <Tag ok>Recebido</Tag>
+                  <Tag ok>{L.received}</Tag>
                 </li>
               ))}
             </ul>
@@ -140,7 +158,7 @@ export function WebScreen({ step, d }: { step: number; d: PrototypeScreensData }
 
         {step === 1 && (
           <>
-            <ScreenTitle kicker="02 · Leitura" title="Dados encontrados nos documentos" />
+            <ScreenTitle kicker={kicker(1)} title={L.readTitle} />
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <tbody>
                 {d.readings.map((r) => (
@@ -151,7 +169,7 @@ export function WebScreen({ step, d }: { step: number; d: PrototypeScreensData }
                     </td>
                     <td style={{ ...cell, color: "var(--n-600)", fontSize: 17 }}>{r.source}</td>
                     <td style={{ ...cell, textAlign: "right" }}>
-                      <Tag ok={r.ok}>{r.ok ? "Lido" : "Falta"}</Tag>
+                      <Tag ok={r.ok}>{r.ok ? L.read : L.missing}</Tag>
                     </td>
                   </tr>
                 ))}
@@ -162,7 +180,7 @@ export function WebScreen({ step, d }: { step: number; d: PrototypeScreensData }
 
         {step === 2 && (
           <>
-            <ScreenTitle kicker="03 · Confirmação" title="Antes de calcular, preciso confirmar" />
+            <ScreenTitle kicker={kicker(2)} title={L.confirmTitle} />
             <div style={{ display: "grid", gap: 16 }}>
               {d.questions.map((q, qi) => (
                 <div key={q.text} style={{ border: "1px solid var(--n-200)", borderRadius: 14, padding: "18px 20px" }}>
@@ -197,7 +215,7 @@ export function WebScreen({ step, d }: { step: number; d: PrototypeScreensData }
 
         {step === 3 && (
           <>
-            <ScreenTitle kicker="04 · Cálculo" title={d.calc.title} />
+            <ScreenTitle kicker={kicker(3)} title={d.calc.title} />
             <ol style={{ display: "grid", gap: 10 }}>
               {d.calc.lines.map((l, i) => (
                 <li
@@ -230,7 +248,7 @@ export function WebScreen({ step, d }: { step: number; d: PrototypeScreensData }
 
         {step === 4 && (
           <>
-            <ScreenTitle kicker="05 · Relatório" title="Resultado da conferência" />
+            <ScreenTitle kicker={kicker(4)} title={L.reportTitle} />
             <div style={{ display: "flex", gap: 10, marginBottom: 14 }}>
               {d.report.summary.map((s) => (
                 <span key={s.label} className={`status status-${s.tone}`} style={{ fontSize: 15 }}>
@@ -241,7 +259,7 @@ export function WebScreen({ step, d }: { step: number; d: PrototypeScreensData }
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>
                 <tr>
-                  {["Item", "Informado", "Esperado", "Diferença", "Situação"].map((h, i) => (
+                  {L.headers.map((h, i) => (
                     <th
                       key={h}
                       className="t-mono"
@@ -321,7 +339,7 @@ export function PhoneScreen({ step, d }: { step: number; d: PrototypeScreensData
     <div style={{ display: "flex", flexDirection: "column", height: "100%", color: "var(--c-night)" }}>
       <div style={{ padding: "4px 20px 14px", borderBottom: "1px solid var(--n-200)" }}>
         <p className="t-mono" style={{ fontSize: 13, color: "var(--c-core)" }}>
-          Conferência · {String(step + 1).padStart(2, "0")}/05
+          {d.labels.phoneHeader} · {String(step + 1).padStart(2, "0")}/05
         </p>
         <p className="t-num" style={{ fontSize: 17, color: "var(--n-600)", marginTop: 2 }}>
           {d.competence}
@@ -429,7 +447,7 @@ export function PhoneScreen({ step, d }: { step: number; d: PrototypeScreensData
             color: "var(--n-400)",
           }}
         >
-          Escreva ou envie um arquivo
+          {d.labels.inputPlaceholder}
         </span>
       </div>
     </div>

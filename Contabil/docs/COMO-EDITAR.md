@@ -2,17 +2,30 @@
 
 ## Trocar um texto
 
-Abra `src/content/slide-NN.ts` e edite o campo em `data`. Exemplo (slide 4):
+Cada `src/content/slide-NN.ts` tem o conteúdo nos dois idiomas, com **a mesma estrutura**:
 
 ```ts
-title: "O valor chega pronto. [A explicação, não.]",
+content: {
+  pt: { label, title, layoutNote, notes, data: { title: "O valor chega pronto. [A explicação, não.]", ... } },
+  en: { label, title, layoutNote, notes, data: { title: "The figure arrives ready. [The explanation doesn't.]", ... } },
+}
 ```
+
+Edite o campo em `pt` e o correspondente em `en`. O TypeScript avisa se faltar algum campo em um dos idiomas.
 
 - `[colchetes]` = destaque na cor do produto (use um por bloco).
 - `\n` = quebra de linha forçada no título.
 - A fala do apresentador fica em `notes` (parágrafos separados por linha em branco).
 
-Depois rode `npm run roteiro` para atualizar `docs/ROTEIRO.md`.
+Depois rode `npm run roteiro` para atualizar `docs/ROTEIRO.md` e `docs/ROTEIRO-EN.md`.
+
+Textos fixos da interface (rodapé "Criado por…", dicas de teclado, painel de fala) ficam em `src/i18n/ui.ts`. As telas do protótipo (slide 7) têm os rótulos em `data.screens.labels`.
+
+## Adicionar outro idioma
+
+1. Inclua o código em `Locale` e `LOCALES` (`src/i18n/locale.tsx`) e uma bandeira em `LanguageSwitch.tsx` / `Flags.tsx`.
+2. Adicione o bloco em `src/i18n/ui.ts`.
+3. Adicione a chave do idioma em `content` de cada slide.
 
 ## Reordenar ou remover
 
@@ -21,7 +34,7 @@ Edite a lista em `src/content/index.ts`. A numeração (`04 · …`, `ES/ · 04/
 ## Adicionar um slide
 
 1. Copie um arquivo parecido, ex.: `cp src/content/slide-08.ts src/content/slide-13.ts`.
-2. Ajuste `id`, `label`, `title`, `tone` (`"light"` ou `"dark"`), `steps`, `data` e `notes`.
+2. Ajuste `id`, `tone` (`"light"` ou `"dark"`), `steps` e o bloco `content` em `pt` e `en`.
 3. Registre em `src/content/index.ts`.
 
 ## Layouts disponíveis

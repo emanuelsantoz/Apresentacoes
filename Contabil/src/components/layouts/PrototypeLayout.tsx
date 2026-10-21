@@ -79,7 +79,7 @@ export function PrototypeLayout({ data, step }: LayoutProps<PrototypeData>) {
         <BrowserMock url={data.url} style={{ width: "100%", height: "100%" }}>
           <AnimatePresence mode="wait" initial={false}>
             <motion.div key={step} {...screenAnim} style={{ position: "absolute", inset: 0 }}>
-              <WebScreen step={step} d={data.screens} />
+              <WebScreen step={step} d={data.screens} flow={data.flow} />
             </motion.div>
           </AnimatePresence>
         </BrowserMock>

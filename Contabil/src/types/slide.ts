@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import type { Locale } from "../i18n/locale";
 
 export type Tone = "light" | "dark";
 
@@ -8,20 +9,26 @@ export interface LayoutProps<D> {
   step: number;
 }
 
-export interface SlideDef<D = unknown> {
-  /** "slide-03" */
-  id: string;
+/** Texto de um slide em um idioma. */
+export interface SlideCopy<D> {
   /** Rótulo curto da seção, exibido na etiqueta mono do topo. */
   label: string;
   /** Título usado na visão geral e no roteiro. */
   title: string;
-  tone: Tone;
-  /** Quantos cliques internos (reveals) o slide possui. 0 = nenhum. */
-  steps: number;
-  /** Indicação de layout para o roteiro (docs/ROTEIRO.md). */
+  /** Indicação de layout para o roteiro (docs/ROTEIRO*.md). */
   layoutNote: string;
   /** Fala do apresentador. Não aparece no slide. */
   notes: string;
   data: D;
+}
+
+export interface SlideDef<D = unknown> {
+  /** "slide-03" */
+  id: string;
+  tone: Tone;
+  /** Quantos cliques internos (reveals) o slide possui. 0 = nenhum. */
+  steps: number;
   Layout: ComponentType<LayoutProps<D>>;
+  /** Conteúdo por idioma: mesma estrutura em pt e en. */
+  content: Record<Locale, SlideCopy<D>>;
 }

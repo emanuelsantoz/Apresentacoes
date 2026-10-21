@@ -1,5 +1,6 @@
 import { slides } from "../../content";
 import { PrintContext } from "../../hooks/usePresentationMode";
+import { useLocale } from "../../i18n/locale";
 import { RenderSlide } from "./RenderSlide";
 
 interface OverviewProps {
@@ -11,6 +12,7 @@ interface OverviewProps {
 
 /** Grade de miniaturas (tecla O). Miniaturas sem animação, no estado final. */
 export function Overview({ current, onPick, onClose }: OverviewProps) {
+  const { locale } = useLocale();
   // 4 colunas × 3 linhas cabendo na janela
   const SCALE = Math.min((window.innerWidth - 48 - 60) / (4 * 1920), (window.innerHeight - 48 - 40) / (3 * 1080), 0.2);
   return (
@@ -35,7 +37,7 @@ export function Overview({ current, onPick, onClose }: OverviewProps) {
                 e.stopPropagation();
                 onPick(i);
               }}
-              title={s.title}
+              title={s.content[locale].title}
               style={{
                 width: 1920 * SCALE,
                 height: 1080 * SCALE,

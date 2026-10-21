@@ -39,6 +39,7 @@ Dentro dos mockups (slide 7) os textos são de interface (15–22 px), como numa
 
 ## Decisões
 
+0. Seletor de idioma: bandeiras em SVG (emojis de bandeira não aparecem no Windows), fora do palco, some junto com os demais controles — não entra no PDF.
 1. Nenhum elemento, cor, fonte ou frase de terceiros/empregadores. Apresentação independente.
 2. Sem nome ou logotipo de produto — "MVP · Conferência contábil" funciona como descritor.
 3. Contraste: texto corrido em Noite sobre Névoa; Pulso só em texto grande sobre Noite.

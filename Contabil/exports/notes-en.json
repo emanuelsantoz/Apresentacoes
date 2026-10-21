@@ -1,0 +1,62 @@
+[
+  {
+    "n": 1,
+    "title": "Accounting review that is clearer, traceable and easy to follow",
+    "notes": "Good afternoon. Today I want to show you a simple prototype with a very clear goal: making the monthly accounting review easier to follow.\n\nThe idea is not to replace the accountant. It is to give the company a way to understand the figures it receives — where each number comes from, which rule was applied and whether there is any difference.\n\nOn the right you can see the whole flow in five steps: upload, reading, confirmation, calculation and report. I'll come back to it later with the prototype. And by the end, I'd like us to leave with a decision about a small pilot."
+  },
+  {
+    "n": 2,
+    "title": "About me",
+    "notes": "A quick word about me. My name is Emanuel Santos, and I work where strategy, design and the engineering of digital products meet.\n\nIn practice, that means three things: I build and test systems; before automating, I organize the process — because a nice screen on top of a messy routine only makes the mess faster; and I like taking loosely structured problems and turning them into clear steps.\n\nThis work was born in my Systems Analysis and Development course, as an extension project. That's what I explain on the next slide."
+  },
+  {
+    "n": 3,
+    "title": "PEX — Extension Project",
+    "notes": "PEX is the course's Extension Project. The idea is simple: leave the classroom, identify a real problem in a small business and propose a feasible systems solution.\n\nIt has three stages. First, diagnosis: understanding the routine and where the doubts are. Then, data collection: conversation, questionnaire and documents. Finally, the proposal: a prototype and an action plan.\n\nWe are at the third stage. Everything I'm about to show is the proposal — and it only makes sense if it makes sense for the company."
+  },
+  {
+    "n": 4,
+    "title": "The current problem",
+    "notes": "This is the problem I found. Every month the company receives tax slips, calculations and documents. The figure arrives ready — but the explanation doesn't.\n\nThe documents are scattered: a PDF in an email, a photo on a phone, a spreadsheet somewhere else. The calculations are hard to follow without the calculation trail. And when a discrepancy shows up, it's usually close to the due date, when there's no time left to understand it calmly.\n\nAs a result, every doubt turns into another round of questions to the accountant. Not because anyone is careless — but because there is no single place where the company can see where each number comes from."
+  },
+  {
+    "n": 5,
+    "title": "MVP goal",
+    "notes": "The MVP goal is deliberately small: check one reference month at a time.\n\nFor each item checked, people see three things side by side: the reported figure, the figure the calculation expects and the difference. And the difference is always shown, even when it's small. There is no automatic tolerance: a person decides whether a difference matters, not the system.\n\nOn top of that, every figure comes with the rule applied, the source document and page, and whatever is still pending.\n\nThe reference scenario is real: a legal services firm in São Paulo under Simples Nacional — Brazil's simplified tax regime for small businesses — Annex IV, with one partner on owner's pay and a university intern working six hours a day."
+  },
+  {
+    "n": 6,
+    "title": "Proposed solution",
+    "notes": "The solution starts from one rule: the company sends what it already has. A PDF, a spreadsheet, a photo taken with a phone or typed data. Nobody has to reorganize their routine before starting.\n\n(click) The assistant reads those documents, spots what's missing and asks — instead of guessing. Then it recalculates the month's figures based on the rules in force for that month.\n\n(click) The output is a clear report: a plain-language explanation, the calculation trail and the full list of discrepancies.\n\nTwo important safeguards. If a reading fails — a blurry photo, an unreadable PDF — the system asks for another photo, another file or typed data, and marks the check as pending. And the final sign-off still belongs to a licensed accountant."
+  },
+  {
+    "n": 7,
+    "title": "Prototype flow",
+    "notes": "Now, the prototype. It is concrete evidence of the flow — not a finished product. The numbers come from the simulated case in the questionnaire itself: R$ 30,000 of revenue in the month, R$ 360,000 of RBT12 — the revenue of the previous twelve months — and R$ 7,000 of owner's pay.\n\n(click) Upload: the company sends what it has — a tax slip as a PDF, the payroll as a spreadsheet, a photo of a receipt. On the phone, this happens as a chat.\n\n(click) Reading: the system shows what it found and where each piece of data came from. And it already flags what's missing: here, the DAS payment receipt. DAS is the single monthly tax slip of Simples Nacional.\n\n(click) Confirmation: instead of guessing, it asks. If nobody knows, the item stays pending and the rest of the review continues.\n\n(click) Calculation: the calculation trail is visible line by line — bracket, table, effective rate and expected value. In this simulated case, the expected DAS is R$ 2,025, the same as on the tax slip.\n\n(click) Report: what was checked, what is pending and the difference for each item — even when it is zero. And the report always ends in the same place: the licensed accountant's sign-off.\n\n(Presenter note: the Annex IV table and the 20% CPP — employer social security contribution — on owner's pay are assumptions of the simulated case; confirm them with the accountant before using real data.)"
+  },
+  {
+    "n": 8,
+    "title": "What we need to get started",
+    "notes": "To get started, we need four decisions — and none of them depends on integrating with other systems.\n\nFirst, the documents: tax slips, payroll, invoices and statements for a single month. Second, access: who sends, who views and who signs off the report.\n\nThird, and most important: accountability for the data. We are talking about the company's tax data and the personal data of the partner and the intern. So purpose, retention period and disposal must be agreed in writing before the first upload, in line with the LGPD, Brazil's data protection law.\n\nAnd fourth, the pilot's infrastructure: where the prototype runs and who looks after that environment during the test."
+  },
+  {
+    "n": 9,
+    "title": "Quick questions and full questionnaire",
+    "notes": "The full questionnaire is long — and I don't want it to become a barrier. So I split it into two moments.\n\nSome questions fit right here, now, in our conversation: which month we check first, which documents already exist, which figure raises the most doubts and who signs off the final report.\n\n(click) The rest must be recorded: company identification and activity codes, revenue and RBT12, the DAS tax slip, owner's pay, the internship, other expenses and the sign-off criteria.\n\nIt isn't red tape. Every recorded answer is what lets the system explain why a figure is right or wrong, and what lets the accountant check the reasoning later. Without it, the calculation becomes a black box — exactly what we want to avoid."
+  },
+  {
+    "n": 10,
+    "title": "First MVP scope",
+    "notes": "The first MVP is small on purpose: one company, one month and three checks.\n\nIn scope: the DAS checked against revenue and RBT12; owner's pay, with social security, income tax withholding and the employer contribution; and the internship, with stipend and transport aid. All of it delivered in a report that shows every discrepancy.\n\nIt's just as important to say what stays out: no integration with other systems, no filing returns or making payments, no decision without the accountant's sign-off. The balance sheet and financial management also come later.\n\nA scope like this tells us quickly whether the idea works — and if it doesn't, finding that out is cheap."
+  },
+  {
+    "n": 11,
+    "title": "Shall we close an MVP?",
+    "notes": "So, the proposal: shall we run a pilot? It is small and has a beginning, a middle and an end.\n\nFirst, we pick a month and gather the documents. Then I run the review in the prototype. Next, we go over the report together with the accountant. And finally, we decide together: adjust, expand or stop.\n\n(click) To know whether it worked, I propose four criteria: every figure shows its source and formula; every discrepancy appears in the report; the accountant can sign off without redoing the calculation; and the company understands the result without technical help.\n\nWhat I need to leave here knowing is simple: which month, which documents and the review date."
+  },
+  {
+    "n": 12,
+    "title": "What comes next",
+    "notes": "To wrap up: this MVP is about reviewing. It is not a management system — at least not yet.\n\nIf the pilot proves its value, there are natural next steps: a consolidated balance sheet built from the reviews, financial tracking of inflows, outflows and deadlines and, further ahead, indicators for running the company.\n\nBut each step only starts if the previous one works. The first decision is today's: the pilot.\n\nThank you. I'm happy to take questions — and to agree on the month and the review date."
+  }
+]

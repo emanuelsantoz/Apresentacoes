@@ -193,6 +193,23 @@
   - Confirmação
   - Cálculo
   - Relatório
+    - Competência
+    - Envie os documentos do mês
+    - Arraste PDF, planilha ou foto
+    - ou digite os dados manualmente
+    - Recebido
+    - Dados encontrados nos documentos
+    - Lido
+    - Falta
+    - Antes de calcular, preciso confirmar
+    - Resultado da conferência
+      - Item
+      - Informado
+      - Esperado
+      - Diferença
+      - Situação
+    - Conferência
+    - Escreva ou envie um arquivo
   - Competência de teste
     - guia-das.pdf — PDF
     - folha-pro-labore.xlsx — Planilha

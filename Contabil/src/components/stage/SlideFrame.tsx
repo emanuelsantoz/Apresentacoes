@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useUi } from "../../i18n/locale";
 import type { Tone } from "../../types/slide";
 
 interface SlideFrameProps {
@@ -18,6 +19,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
  * etiqueta técnica no topo e endosso discreto no rodapé.
  */
 export function SlideFrame({ tone, index, total, label, children, bare = false }: SlideFrameProps) {
+  const t = useUi();
   return (
     <section
       className={`theme-${tone}`}
@@ -59,7 +61,7 @@ export function SlideFrame({ tone, index, total, label, children, bare = false }
           <span className="eyebrow">
             {pad(index + 1)} · {label}
           </span>
-          <span>MVP · Conferência contábil</span>
+          <span>{t.product}</span>
         </header>
       )}
       <div style={{ position: "absolute", inset: 0 }}>{children}</div>
@@ -77,7 +79,7 @@ export function SlideFrame({ tone, index, total, label, children, bare = false }
           letterSpacing: "0.1em",
         }}
       >
-        <span>Criado por Emanuel Santos</span>
+        <span>{t.endorsement}</span>
         <span className="t-num">
           ES/ · {pad(index + 1)}/{pad(total)}
         </span>

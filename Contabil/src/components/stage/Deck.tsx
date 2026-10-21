@@ -4,6 +4,8 @@ import { slides } from "../../content";
 import { useDeck } from "../../hooks/useDeck";
 import { useIdle } from "../../hooks/useIdle";
 import { useMotionPreset } from "../../hooks/usePresentationMode";
+import { useLocale, useUi } from "../../i18n/locale";
+import { LanguageSwitch } from "./LanguageSwitch";
 import { Overview } from "./Overview";
 import { NotesPanel } from "./NotesPanel";
 import { RenderSlide } from "./RenderSlide";
@@ -19,6 +21,8 @@ export function Deck() {
   const idle = useIdle(2000);
   const { reduced } = useMotionPreset();
   const digits = useRef("");
+  const { locale, toggle: toggleLocale } = useLocale();
+  const t = useUi();
 
   const toggleFullscreen = useCallback(() => {
     if (document.fullscreenElement) void document.exitFullscreen();
@@ -44,6 +48,7 @@ export function Deck() {
       if (k === "o" || k === "O") return setOverview((v) => !v);
       if (k === "n" || k === "N") return setNotes((v) => !v);
       if (k === "f" || k === "F") return toggleFullscreen();
+      if (k === "l" || k === "L") return toggleLocale();
       if (overview) return;
       if (k === "ArrowRight" || k === " " || k === "PageDown") {
         e.preventDefault();
@@ -56,7 +61,7 @@ export function Deck() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [goTo, next, prev, overview, toggleFullscreen, total]);
+  }, [goTo, next, prev, overview, toggleFullscreen, toggleLocale, total]);
 
   // Swipe no mobile
   const touchX = useRef<number | null>(null);
@@ -77,7 +82,7 @@ export function Deck() {
       <Stage>
         <AnimatePresence mode="wait" custom={direction} initial={false}>
           <motion.div
-            key={slide.id}
+            key={`${slide.id}-${locale}`}
             initial={{ opacity: 0, x: shift * direction }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -shift * direction }}
@@ -89,8 +94,8 @@ export function Deck() {
         </AnimatePresence>
 
         {/* Zonas de clique laterais */}
-        <button aria-label="Voltar" onClick={prev} style={sideZone("left")} />
-        <button aria-label="Avançar" onClick={next} style={sideZone("right")} />
+        <button aria-label={t.prev} onClick={prev} style={sideZone("left")} />
+        <button aria-label={t.next} onClick={next} style={sideZone("right")} />
       </Stage>
 
       {/* Barra de progresso */}
@@ -123,8 +128,10 @@ export function Deck() {
           borderRadius: 8,
         }}
       >
-        ← → navegar · O visão geral · N notas · F tela cheia
+        {t.hint}
       </div>
+
+      <LanguageSwitch hidden={idle && !overview} />
 
       {notes && <NotesPanel slide={slide} index={pos.index} total={total} step={pos.step} />}
       {overview && (

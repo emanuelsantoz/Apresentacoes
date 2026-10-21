@@ -17,4 +17,6 @@
 
 Narrativa (marca Emanuel): **tensão** (4) → **crença/objetivo** (5) → **construção** (6) → **evidência** (7) → **decisão** (8–11) → **continuidade** (12). Autoria concentrada nos slides 2–3, assinatura discreta nos demais (≈ 70/30).
 
+Cada arquivo traz `content.pt` e `content.en`. Roteiros: `docs/ROTEIRO.md` e `docs/ROTEIRO-EN.md`.
+
 Texto original: `content-source/roteiro-proposto.md` e `content-source/questionario-mvp.txt`.
