@@ -23,7 +23,7 @@ export function SlideFrame({ tone, index, total, label, children, bare = false }
   return (
     <section
       className={`theme-${tone}`}
-      data-slide-root
+      data-slide-frame
       style={{
         position: "relative",
         width: 1920,

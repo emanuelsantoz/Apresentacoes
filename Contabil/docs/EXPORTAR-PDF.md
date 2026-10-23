@@ -11,6 +11,8 @@ Gera:
 - `exports/slides/` (PT) e `exports/slides-en/` (EN) — uma imagem por slide;
 - `exports/notes.json` e `exports/notes-en.json` — falas, usadas pelo PPTX.
 
+Os PDFs usam as edições de `public/edicoes.json` e deixam de fora os slides ocultos (renumerando). Para incluir todos, abra a rota com `?todos`. Antes de exportar, use **Salvar no projeto** no modo edição.
+
 Como funciona: `scripts/export-pdf.ts` sobe o `vite preview`, abre `?print=1&lang=pt` e `?print=1&lang=en` no Chromium (Playwright), espera as fontes e imprime com `printBackground` e `@page { size: 1920px 1080px; margin: 0 }`.
 
 Na primeira vez, instale o navegador do Playwright:

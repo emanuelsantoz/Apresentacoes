@@ -10,6 +10,8 @@
 | `docs/03-arquitetura-de-produtos.md` | regra 70/30 e contrato `--product-*` | tema provisório; autoria só nos slides 2–3 |
 | Skill de apresentações (harness) | estrutura React + Vite, palco 1920×1080, navegação, passos, `?print=1`, export PDF, docs | projeto inteiro — **somente a parte técnica**; nenhuma identidade visual ou verbal de terceiros foi usada |
 
+| Projeto da apresentação de Amortizações (`src/edit/`) | modo edição completo: texto direto no slide, barra de estilo, cards, ímã, ocultar slides, desfazer, salvar/exportar `edicoes.json`, troca de imagem | portado como código; cores trocadas para a paleta Emanuel, edições separadas por idioma |
+
 ## Cálculo exibido no slide 7
 
 DAS esperado = receita do mês × alíquota efetiva, com alíquota efetiva = (RBT12 × alíquota nominal − parcela a deduzir) ÷ RBT12. Anexo IV, 2ª faixa (RBT12 de R$ 180.000,01 a R$ 360.000,00): 9% e R$ 8.100,00 → 6,75% → R$ 2.025,00, igual ao DAS simulado do questionário. CPP de 20% sobre o pró-labore (recolhida fora do DAS no Anexo IV) = R$ 1.400,00, igual à premissa. **Premissas de teste — confirmar tabela e regras com o profissional contábil antes de usar dados reais.**
@@ -17,6 +19,6 @@ DAS esperado = receita do mês × alíquota efetiva, com alíquota efetiva = (RB
 ## Pendências
 
 - Nome da instituição de ensino e da empresa participante: não exibidos (decisão do autor).
-- Retrato de Emanuel: não usado (sem foto aprovada); o slide 2 usa a assinatura `ES/`.
+- Retrato de Emanuel: ainda sem foto; o slide 2 mostra a assinatura `ES/` até você enviar uma imagem (modo edição) ou salvar `public/images/retrato-emanuel.jpg`.
 - Nome/identidade do produto: inexistentes nesta etapa, por decisão.
 - Telas do protótipo são ilustrativas (recriadas em React), não capturas de um sistema em produção.

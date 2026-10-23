@@ -14,6 +14,7 @@ export const slide02: SlideDef<ProfileData> = {
         "Slide de autoria (parte dos 30% Emanuel). À esquerda, assinatura ES/ em moldura aberta com nome e descritor; à direita, três cards — tecnologia, processos, produto — entrando em sequência.",
       data: {
         mark: "ES/",
+        portraitAlt: "Retrato de Emanuel Santos",
         name: "Emanuel Santos",
         descriptor: "Estratégia, design e engenharia de produtos digitais.",
         pillars: [
@@ -36,6 +37,7 @@ Este trabalho nasce dentro do meu curso de Análise e Desenvolvimento de Sistema
         "Authorship slide (part of the 30% Emanuel share). On the left, the ES/ signature in an open frame with name and descriptor; on the right, three cards — technology, processes, product — entering in sequence.",
       data: {
         mark: "ES/",
+        portraitAlt: "Portrait of Emanuel Santos",
         name: "Emanuel Santos",
         descriptor: "Strategy, design and engineering of digital products.",
         pillars: [

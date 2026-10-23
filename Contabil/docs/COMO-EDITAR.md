@@ -1,5 +1,7 @@
 # Como editar
 
+> Ajustes rápidos (texto, cor, tamanho, posição, card novo, ocultar slide) podem ser feitos **na própria apresentação** com a tecla **E** — ver `EDICAO.md`. Este guia é para mudanças no código.
+
 ## Trocar um texto
 
 Cada `src/content/slide-NN.ts` tem o conteúdo nos dois idiomas, com **a mesma estrutura**:

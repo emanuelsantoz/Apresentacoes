@@ -18,6 +18,9 @@ npm run dev          # http://localhost:5173
 | `Home` / `End` | primeiro / último slide |
 | número + `Enter` | salta para o slide (ex.: `7` `Enter`) |
 | `L` | troca o idioma (PT ⇄ EN) |
+| `E` | modo edição ⇄ apresentação |
+| `H` | (no modo edição) oculta/mostra o slide atual |
+| `Ctrl+Z` / `Ctrl+Y` | (no modo edição) desfaz / refaz |
 | `O` | visão geral (miniaturas) |
 | `N` | fala do apresentador |
 | `F` | tela cheia |
@@ -25,9 +28,13 @@ npm run dev          # http://localhost:5173
 
 Clique nas laterais ou deslize no celular para navegar. A URL guarda a posição: `#/7/2` = slide 7, passo 2.
 
+## Modo edição
+
+Tecla **E** (ou botão **Editar** na cápsula de controles): clique em qualquer texto e digite direto no slide; mude tamanho, peso, cor e marca-texto; redimensione e mova cards (com guias de alinhamento); crie cards de texto; troque a imagem do slide 2; oculte slides da apresentação; desfaça com Ctrl+Z. As edições ficam salvas no navegador e, com **Salvar no projeto** (em `npm run dev`), em `public/edicoes.json` — que também vale para o PDF. Detalhes em `EDICAO.md`.
+
 ## Idioma
 
-No canto superior direito há o seletor com as bandeiras 🇧🇷 **PT** / 🇺🇸 **EN** (aparece ao mexer o mouse, some após 2 s). Ele troca **tudo**: textos dos slides, telas do protótipo, rodapé, fala do apresentador e o título da aba. Atalho: tecla `L`.
+Na cápsula de controles (canto superior direito; embaixo no modo edição) há o seletor com as bandeiras 🇧🇷 **PT** / 🇺🇸 **EN** — aparece ao mexer o mouse e some após 2 s. Ele troca **tudo**: textos dos slides, telas do protótipo, rodapé, fala do apresentador e o título da aba. Atalho: tecla `L`.
 
 O idioma fica na URL: `http://localhost:5173/?lang=en#/1` abre direto em inglês.
 
@@ -47,6 +54,7 @@ O idioma fica na URL: `http://localhost:5173/?lang=en#/1` abre direto em inglês
 
 ## Documentação
 
+- `EDICAO.md` — modo edição: textos, cards, imagens, ocultar slides, salvar
 - `ROTEIRO.md` / `ROTEIRO-EN.md` — texto de tela, fala e layout de cada slide
 - `ARQUITETURA.md` — pastas e fluxo de renderização
 - `COMO-EDITAR.md` — textos, ordem, novos slides

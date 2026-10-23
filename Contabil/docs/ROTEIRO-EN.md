@@ -38,6 +38,7 @@
 **On-screen text**
 
 - ES/
+- Portrait of Emanuel Santos
 - Emanuel Santos
 - Strategy, design and engineering of digital products.
   - Technology — I build and test systems — From prototype to code that can be verified.

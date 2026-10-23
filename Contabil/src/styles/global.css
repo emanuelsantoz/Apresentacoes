@@ -144,3 +144,19 @@ html.print-root,
 html.print-root body,
 html.print-root #root { overflow: visible; height: auto; background: var(--c-night); }
 @page { size: 1920px 1080px; margin: 0; }
+
+/* ---------- Modo edição (src/edit) ---------- */
+[data-editor-ui] button:disabled { opacity: 0.4; cursor: default; }
+[contenteditable]:not([contenteditable="false"]) { outline: none; caret-color: #2166c9; cursor: text; }
+body[data-mode="edicao"] [data-card-text]:empty::before { content: 'Digite o texto'; opacity: 0.45; }
+body[data-mode="edicao"] [data-new-card] { cursor: move; }
+body[data-mode="edicao"] [data-card-text] { cursor: text; }
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media print { .no-print { display: none !important; } }
+
+/* Área de imagem vazia */
+.img-hatch {
+  background-color: var(--n-100);
+  background-image: repeating-linear-gradient(45deg, rgb(255 255 255 / 0.6) 0 14px, transparent 14px 28px);
+}

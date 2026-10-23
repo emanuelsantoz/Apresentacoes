@@ -1,9 +1,12 @@
 import type { LayoutProps } from "../../types/slide";
+import { ImageSlot } from "../ui/ImageSlot";
 import { OpenFrame } from "../ui/OpenFrame";
 import { Reveal } from "../ui/Reveal";
 
 export interface ProfileData {
   mark: string;
+  /** Texto alternativo do retrato (public/images/retrato-emanuel.jpg). */
+  portraitAlt: string;
   name: string;
   descriptor: string;
   pillars: { tag: string; title: string; text: string }[];
@@ -28,19 +31,30 @@ export function ProfileLayout({ data }: LayoutProps<ProfileData>) {
           padding: 64,
         }}
       >
-        <Reveal delay={0.2}>
-          <span
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 700,
-              fontSize: 260,
-              letterSpacing: "-0.06em",
-              lineHeight: 0.9,
-              color: "var(--product-primary)",
-            }}
-          >
-            {data.mark}
-          </span>
+        <Reveal delay={0.2} style={{ position: "relative", width: 432, height: 400, borderRadius: 20 }}>
+          {/* Retrato opcional: sem imagem, mostra a assinatura ES/. No modo edição, arraste uma foto aqui. */}
+          <ImageSlot
+            id="retrato-emanuel"
+            label={data.portraitAlt}
+            position="center 25%"
+            fallback={
+              <span
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  top: 0,
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
+                  fontSize: 260,
+                  letterSpacing: "-0.06em",
+                  lineHeight: 0.9,
+                  color: "var(--product-primary)",
+                }}
+              >
+                {data.mark}
+              </span>
+            }
+          />
         </Reveal>
         <Reveal delay={0.32}>
           <p className="t-h3" style={{ fontSize: 44 }}>

@@ -38,6 +38,7 @@
 **Texto de tela**
 
 - ES/
+- Retrato de Emanuel Santos
 - Emanuel Santos
 - Estratégia, design e engenharia de produtos digitais.
   - Tecnologia — Construo e testo sistemas — Do protótipo ao código que pode ser verificado.

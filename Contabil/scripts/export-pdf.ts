@@ -25,6 +25,7 @@ for (const locale of LOCALES) {
 
   const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
   await page.goto(`${url}?print=1&lang=${locale}`, { waitUntil: "networkidle" });
+  await page.waitForSelector("[data-print-page]");
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(600);
 
