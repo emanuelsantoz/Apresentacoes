@@ -13,15 +13,15 @@ export const slide12: SlideDef<ContinuityData> = {
       layoutNote:
         "Linha do tempo horizontal tracejada. O primeiro nó (Agora · MVP de conferência) é sólido; os demais (balanço, acompanhamento financeiro, gestão empresarial) são tracejados, indicando possibilidade. Fecha com a frase de continuidade e o endosso.",
       data: {
-        title: "Primeiro conferir. [Depois, acompanhar.]",
-        lead: "Cada evolução só começa se a etapa anterior provar valor no piloto.",
+        title: "Começar pela conferência. [Crescer aos poucos.]",
+        lead: "Só avançamos quando o piloto provar valor.",
         stages: [
-          { when: "Agora", title: "Conferência", text: "Uma competência, com relatório de divergências.", now: true },
-          { when: "Possível", title: "Balanço", text: "Visão consolidada a partir das conferências." },
-          { when: "Possível", title: "Financeiro", text: "Acompanhamento de entradas, saídas e prazos." },
-          { when: "Possível", title: "Gestão", text: "Indicadores para decisões da empresa." },
+          { when: "Agora", title: "Conferência", text: "Um mês. Um relatório claro.", now: true },
+          { when: "Possível", title: "Balanço", text: "Visão mais ampla das conferências." },
+          { when: "Possível", title: "Financeiro", text: "Entradas, saídas e prazos." },
+          { when: "Possível", title: "Gestão", text: "Informação para decidir." },
         ],
-        closing: "Ideias ganham forma e continuam.",
+        closing: "Primeiro, provar valor.",
         signature: "Emanuel Santos · ES/",
       },
       notes: `Para fechar: este MVP é sobre conferência. Ele não é um sistema de gestão — pelo menos não agora.
@@ -38,15 +38,15 @@ Obrigado. Fico à disposição para as perguntas — e para combinarmos a compet
       layoutNote:
         "Dashed horizontal timeline. The first node (Now · review MVP) is solid; the others (balance sheet, financial tracking, business management) are dashed, signalling possibility. Closes with the continuity line and the endorsement.",
       data: {
-        title: "First, review. [Then, keep track.]",
-        lead: "Each next step only starts if the previous one proves its value in the pilot.",
+        title: "Start with the review. [Grow step by step.]",
+        lead: "We only move forward after the pilot proves value.",
         stages: [
-          { when: "Now", title: "Review", text: "One month, with a discrepancy report.", now: true },
-          { when: "Possible", title: "Balance sheet", text: "A consolidated view built from the reviews." },
-          { when: "Possible", title: "Finance", text: "Tracking inflows, outflows and deadlines." },
-          { when: "Possible", title: "Management", text: "Indicators for the company's decisions." },
+          { when: "Now", title: "Review", text: "One month. One clear report.", now: true },
+          { when: "Possible", title: "Balance sheet", text: "A wider view from the reviews." },
+          { when: "Possible", title: "Finance", text: "Money, deadlines and follow-up." },
+          { when: "Possible", title: "Management", text: "Information for decisions." },
         ],
-        closing: "Ideas take shape and keep going.",
+        closing: "First, prove value.",
         signature: "Emanuel Santos · ES/",
       },
       notes: `To wrap up: this MVP is about reviewing. It is not a management system — at least not yet.

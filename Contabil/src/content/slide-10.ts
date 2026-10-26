@@ -13,7 +13,7 @@ export const slide10: SlideDef<ScopeData> = {
       layoutNote:
         "Três contadores grandes em mono (01 empresa · 01 competência · 03 conferências). Abaixo, comparação: “Dentro do MVP” em moldura aberta com checks; “Fora, por enquanto” em bloco neutro com marcadores tracejados.",
       data: {
-        title: "Pequeno o bastante para [validar de verdade].",
+        title: "Teste pequeno. [Resultado claro.]",
         counters: [
           { value: "01", label: "Empresa" },
           { value: "01", label: "Competência" },
@@ -21,16 +21,16 @@ export const slide10: SlideDef<ScopeData> = {
         ],
         inLabel: "Dentro do MVP",
         inside: [
-          "DAS × receita e RBT12",
-          "Pró-labore: INSS, IRRF e CPP",
-          "Estágio: bolsa e auxílio-transporte",
-          "Relatório com todas as divergências",
+          "Conferência do DAS",
+          "Pró-labore",
+          "Estágio",
+          "Relatório claro",
         ],
         outLabel: "Fora, por enquanto",
         outside: [
           "Integração com outros sistemas",
-          "Envio de declarações ou pagamentos",
-          "Decisão sem validação contábil",
+          "Declarações e pagamentos",
+          "Decisão sem contador",
           "Balanço e gestão financeira",
         ],
       },
@@ -48,7 +48,7 @@ Um escopo assim permite saber rápido se a ideia funciona — e, se não funcion
       layoutNote:
         "Three large mono counters (01 company · 01 month · 03 checks). Below, a comparison: “Inside the MVP” in an open frame with checks; “Out, for now” in a neutral block with dashed markers.",
       data: {
-        title: "Small enough to [truly validate].",
+        title: "Small test. [Clear result.]",
         counters: [
           { value: "01", label: "Company" },
           { value: "01", label: "Month" },
@@ -56,16 +56,16 @@ Um escopo assim permite saber rápido se a ideia funciona — e, se não funcion
         ],
         inLabel: "Inside the MVP",
         inside: [
-          "DAS × revenue and RBT12",
-          "Owner's pay: INSS, IRRF and CPP",
-          "Internship: stipend and transport aid",
-          "Report with every discrepancy",
+          "DAS check",
+          "Owner's pay",
+          "Internship",
+          "Clear report",
         ],
         outLabel: "Out, for now",
         outside: [
-          "Integration with other systems",
-          "Filing returns or making payments",
-          "Decisions without accountant sign-off",
+          "Other system integrations",
+          "Returns and payments",
+          "Decisions without an accountant",
           "Balance sheet and financial management",
         ],
       },

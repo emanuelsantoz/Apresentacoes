@@ -13,12 +13,12 @@ export const slide04: SlideDef<TensionData> = {
       layoutNote:
         "Tensão. À esquerda, título e quatro dores com ícones. À direita, documentos da competência caem espalhados e levemente girados; balões escuros com dúvidas aparecem por cima.",
       data: {
-        title: "O valor chega pronto. [A explicação, não.]",
+        title: "Muitos documentos. [Pouca clareza.]",
         pains: [
-          { icon: "folder", text: "Documentos espalhados entre e-mail, PDF, foto e planilha." },
-          { icon: "calc", text: "Cálculos difíceis de acompanhar sem a memória de cálculo." },
-          { icon: "warn", text: "Divergências percebidas tarde, perto do vencimento." },
-          { icon: "chat", text: "Cada dúvida exige uma nova rodada de perguntas." },
+          { icon: "folder", text: "Documentos em muitos lugares." },
+          { icon: "calc", text: "Sem memória de cálculo." },
+          { icon: "warn", text: "Problemas aparecem tarde." },
+          { icon: "chat", text: "Mais perguntas a cada dúvida." },
         ],
         documents: [
           { kind: "PDF", label: "Guia DAS", x: 30, y: 20, rotate: -4 },
@@ -46,12 +46,12 @@ O resultado é que cada dúvida vira uma nova rodada de perguntas ao contador. N
       layoutNote:
         "Tension. On the left, the title and four pain points with icons. On the right, the month's documents drop in scattered and slightly rotated; dark speech bubbles with doubts pop up on top.",
       data: {
-        title: "The figure arrives ready. [The explanation doesn't.]",
+        title: "Many documents. [No clear path.]",
         pains: [
-          { icon: "folder", text: "Documents scattered across email, PDFs, photos and spreadsheets." },
-          { icon: "calc", text: "Calculations hard to follow without the calculation trail." },
-          { icon: "warn", text: "Discrepancies noticed late, close to the due date." },
-          { icon: "chat", text: "Every doubt means another round of questions." },
+          { icon: "folder", text: "Documents in many places." },
+          { icon: "calc", text: "No calculation trail." },
+          { icon: "warn", text: "Problems found too late." },
+          { icon: "chat", text: "More questions for every doubt." },
         ],
         documents: [
           { kind: "PDF", label: "DAS tax slip", x: 30, y: 20, rotate: -4 },

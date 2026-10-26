@@ -3,7 +3,6 @@ import { slide01 } from "./slide-01";
 import { slide02 } from "./slide-02";
 import { slide03 } from "./slide-03";
 import { slide04 } from "./slide-04";
-import { slide05 } from "./slide-05";
 import { slide06 } from "./slide-06";
 import { slide07 } from "./slide-07";
 import { slide08 } from "./slide-08";
@@ -18,7 +17,6 @@ export const slides: SlideDef<any>[] = [
   slide02,
   slide03,
   slide04,
-  slide05,
   slide06,
   slide07,
   slide08,

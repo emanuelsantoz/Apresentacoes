@@ -13,13 +13,13 @@ export const slide08: SlideDef<CardsData> = {
       layoutNote:
         "Quatro cards numerados lado a lado (documentos, acessos, dados, infraestrutura), cada um com ícone, frase curta e uma etiqueta mono com a decisão necessária.",
       data: {
-        title: "Quatro definições antes da [primeira conferência].",
-        lead: "Nada disso exige integração ou investimento em infraestrutura definitiva.",
+        title: "O que definir antes de [começar].",
+        lead: "Quatro decisões simples para iniciar o piloto.",
         cards: [
-          { icon: "folder", title: "Documentos", text: "Guias, folha, notas e extratos do mês.", tag: "Quem reúne?" },
-          { icon: "users", title: "Acessos", text: "Quem envia, quem consulta e quem valida.", tag: "Quem participa?" },
-          { icon: "shield", title: "Dados", text: "Finalidade, guarda e descarte combinados por escrito.", tag: "Quem responde?" },
-          { icon: "server", title: "Infraestrutura", text: "Onde o piloto roda e quem mantém o ambiente.", tag: "Onde roda?" },
+          { icon: "folder", title: "Documentos", text: "O que vamos conferir?", tag: "Documentos do mês" },
+          { icon: "users", title: "Pessoas", text: "Quem participa?", tag: "Envia · vê · valida" },
+          { icon: "shield", title: "Dados", text: "Como cuidamos dos dados?", tag: "Uso · guarda · descarte" },
+          { icon: "server", title: "Ambiente", text: "Onde o piloto funciona?", tag: "Ambiente de teste" },
         ],
         footnote: "Dados pessoais e fiscais · tratamento com finalidade definida, conforme a LGPD",
       },
@@ -37,13 +37,13 @@ E quarto, a infraestrutura do piloto: onde o protótipo roda e quem cuida desse 
       layoutNote:
         "Four numbered cards side by side (documents, access, data, infrastructure), each with an icon, a short sentence and a mono tag naming the decision needed.",
       data: {
-        title: "Four decisions before the [first review].",
-        lead: "None of this requires integrations or investment in permanent infrastructure.",
+        title: "What to decide before [we start].",
+        lead: "Four simple decisions to start the pilot.",
         cards: [
-          { icon: "folder", title: "Documents", text: "Tax slips, payroll, invoices and statements for the month.", tag: "Who gathers them?" },
-          { icon: "users", title: "Access", text: "Who sends, who views and who signs off.", tag: "Who takes part?" },
-          { icon: "shield", title: "Data", text: "Purpose, retention and disposal agreed in writing.", tag: "Who is accountable?" },
-          { icon: "server", title: "Infrastructure", text: "Where the pilot runs and who maintains it.", tag: "Where does it run?" },
+          { icon: "folder", title: "Documents", text: "What do we check?", tag: "This month's documents" },
+          { icon: "users", title: "People", text: "Who takes part?", tag: "Sends · views · signs off" },
+          { icon: "shield", title: "Data", text: "How do we handle data?", tag: "Use · keep · delete" },
+          { icon: "server", title: "Setup", text: "Where does the pilot run?", tag: "Test environment" },
         ],
         footnote: "Personal and tax data · processed for a defined purpose under the LGPD (Brazil's data protection law)",
       },
