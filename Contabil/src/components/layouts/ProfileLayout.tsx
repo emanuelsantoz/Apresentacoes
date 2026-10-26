@@ -1,4 +1,5 @@
 import type { LayoutProps } from "../../types/slide";
+import { isPrintRoute } from "../../hooks/usePresentationMode";
 import { ImageSlot } from "../ui/ImageSlot";
 import { OpenFrame } from "../ui/OpenFrame";
 import { Reveal } from "../ui/Reveal";
@@ -14,7 +15,8 @@ export interface ProfileData {
 }
 
 /** Apresentação breve do autor: assinatura ES/ na moldura + três pilares. */
-export function ProfileLayout({ data }: LayoutProps<ProfileData>) {
+export function ProfileLayout({ data, step }: LayoutProps<ProfileData>) {
+  const print = isPrintRoute();
   return (
     <>
       <OpenFrame
@@ -36,7 +38,8 @@ export function ProfileLayout({ data }: LayoutProps<ProfileData>) {
           <ImageSlot
             id="retrato-emanuel"
             label={data.portraitAlt}
-            position="center 25%"
+            fit="cover"
+            position="center top"
             fallback={
               <span
                 style={{
@@ -69,7 +72,7 @@ export function ProfileLayout({ data }: LayoutProps<ProfileData>) {
       <div style={{ position: "absolute", left: 800, top: 200, right: 96 }}>
         <ul style={{ display: "grid", gap: 28 }}>
           {data.pillars.map((p, i) => (
-            <Reveal as="li" key={p.tag} delay={0.3 + i * 0.14} from="right">
+            <Reveal as="li" key={p.tag} show={print || step >= i + 1} delay={0.12} from="right">
               <div
                 className="card"
                 style={{ display: "grid", gridTemplateColumns: "220px 1fr", alignItems: "center", gap: 32, padding: "36px 44px" }}
@@ -87,7 +90,7 @@ export function ProfileLayout({ data }: LayoutProps<ProfileData>) {
             </Reveal>
           ))}
         </ul>
-        <Reveal delay={0.8}>
+        <Reveal show={print || step >= data.pillars.length} delay={0.2}>
           <p className="t-mono" style={{ marginTop: 44, color: "var(--ink-soft)" }}>
             {data.context}
           </p>

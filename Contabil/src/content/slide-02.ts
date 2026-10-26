@@ -4,7 +4,7 @@ import type { SlideDef } from "../types/slide";
 export const slide02: SlideDef<ProfileData> = {
   id: "slide-02",
   tone: "light",
-  steps: 0,
+  steps: 3,
   Layout: ProfileLayout,
   content: {
     pt: {
@@ -16,19 +16,19 @@ export const slide02: SlideDef<ProfileData> = {
         mark: "ES/",
         portraitAlt: "Retrato de Emanuel Santos",
         name: "Emanuel Santos",
-        descriptor: "Estratégia, design e engenharia de produtos digitais.",
+        descriptor: "Quatro anos de experiência em tecnologia, unindo gestão e desenvolvimento de sistemas.",
         pillars: [
-          { tag: "Tecnologia", title: "Construo e testo sistemas", text: "Do protótipo ao código que pode ser verificado." },
-          { tag: "Processos", title: "Organizo antes de automatizar", text: "Entender a rotina vem antes de qualquer tela." },
-          { tag: "Produto", title: "Transformo dúvida em fluxo", text: "Problemas pouco estruturados viram passos claros." },
+          { tag: "Experiência", title: "Quatro anos na área de tecnologia", text: "Atuo com soluções digitais e aprendizado contínuo." },
+          { tag: "Formação", title: "Gestão de TI e Desenvolvimento de Sistemas", text: "Estou cursando Gestão de TI e Análise e Desenvolvimento de Sistemas." },
+          { tag: "Objetivo", title: "Tecnologia que facilita o trabalho", text: "Transformo necessidades do dia a dia em soluções claras e úteis." },
         ],
-        context: "Análise e Desenvolvimento de Sistemas · Projeto de Extensão",
+        context: "Gestão de TI e Análise e Desenvolvimento de Sistemas · Projeto de Extensão",
       },
-      notes: `Rapidamente, quem eu sou. Meu nome é Emanuel Santos e eu trabalho na interseção entre estratégia, design e engenharia de produtos digitais.
+      notes: `Meu nome é Emanuel Santos e tenho quatro anos de experiência na área de tecnologia. Durante esse período, desenvolvi uma visão prática sobre como a tecnologia pode apoiar rotinas e resolver necessidades reais.
 
-Na prática, isso significa três coisas: eu construo e testo sistemas; antes de automatizar, eu organizo o processo — porque uma tela bonita em cima de uma rotina confusa só deixa a confusão mais rápida; e eu gosto de pegar problemas pouco estruturados e transformar em passos claros.
+Hoje, estou cursando Gestão de TI e Análise e Desenvolvimento de Sistemas. Essa formação combina gestão, processos e desenvolvimento, ampliando minha capacidade de criar soluções digitais que sejam claras e úteis para as pessoas.
 
-Este trabalho nasce dentro do meu curso de Análise e Desenvolvimento de Sistemas, como projeto de extensão. É isso que eu explico no próximo slide.`,
+Este trabalho faz parte desse percurso de formação e experiência profissional.`,
     },
     en: {
       label: "About me",
@@ -39,19 +39,19 @@ Este trabalho nasce dentro do meu curso de Análise e Desenvolvimento de Sistema
         mark: "ES/",
         portraitAlt: "Portrait of Emanuel Santos",
         name: "Emanuel Santos",
-        descriptor: "Strategy, design and engineering of digital products.",
+        descriptor: "Four years of experience in technology, combining IT management and systems development.",
         pillars: [
-          { tag: "Technology", title: "I build and test systems", text: "From prototype to code that can be verified." },
-          { tag: "Processes", title: "I organize before automating", text: "Understanding the routine comes before any screen." },
-          { tag: "Product", title: "I turn doubt into flow", text: "Loosely structured problems become clear steps." },
+          { tag: "Experience", title: "Four years in technology", text: "I work with digital solutions and continuous learning." },
+          { tag: "Education", title: "IT Management and Systems Development", text: "I am studying IT Management and Systems Analysis and Development." },
+          { tag: "Purpose", title: "Technology that makes work easier", text: "I turn everyday needs into clear, useful solutions." },
         ],
-        context: "Systems Analysis and Development · Extension Project",
+        context: "IT Management and Systems Analysis and Development · Extension Project",
       },
-      notes: `A quick word about me. My name is Emanuel Santos, and I work where strategy, design and the engineering of digital products meet.
+      notes: `My name is Emanuel Santos, and I have four years of experience in technology. During this time, I have developed a practical perspective on how technology can support routines and solve real needs.
 
-In practice, that means three things: I build and test systems; before automating, I organize the process — because a nice screen on top of a messy routine only makes the mess faster; and I like taking loosely structured problems and turning them into clear steps.
+I am currently studying IT Management and Systems Analysis and Development. This education combines management, processes, and development, strengthening my ability to create clear and useful digital solutions.
 
-This work was born in my Systems Analysis and Development course, as an extension project. That's what I explain on the next slide.`,
+This work is part of that academic and professional journey.`,
     },
   },
 };
