@@ -20,7 +20,7 @@ export const slide02: SlideDef<ProfileData> = {
         pillars: [
           { tag: "Experiência", title: "Quatro anos na área de tecnologia", text: "Atuo com soluções digitais e aprendizado contínuo." },
           { tag: "Formação", title: "Gestão de TI e Desenvolvimento de Sistemas", text: "Estou cursando Gestão de TI e Análise e Desenvolvimento de Sistemas." },
-          { tag: "Objetivo", title: "Tecnologia que facilita o trabalho", text: "Transformo necessidades do dia a dia em soluções claras e úteis." },
+          { tag: "Como eu penso", title: "Conecto ideias, processos e pessoas", text: "Transformo problemas do dia a dia em soluções práticas e claras." },
         ],
         context: "Gestão de TI e Análise e Desenvolvimento de Sistemas · Projeto de Extensão",
       },
@@ -43,7 +43,7 @@ Este trabalho faz parte desse percurso de formação e experiência profissional
         pillars: [
           { tag: "Experience", title: "Four years in technology", text: "I work with digital solutions and continuous learning." },
           { tag: "Education", title: "IT Management and Systems Development", text: "I am studying IT Management and Systems Analysis and Development." },
-          { tag: "Purpose", title: "Technology that makes work easier", text: "I turn everyday needs into clear, useful solutions." },
+          { tag: "How I think", title: "I connect ideas, processes and people", text: "I turn everyday problems into practical, clear solutions." },
         ],
         context: "IT Management and Systems Analysis and Development · Extension Project",
       },
